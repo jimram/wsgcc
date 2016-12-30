@@ -1,0 +1,118 @@
+//
+// Menu bar
+// --------------------------------------------------
+
+// Default
+
+// Content
+
+.menu-bar {
+  width:100%;
+  font-family: $font-sans;
+  padding-bottom: $padding-v;
+
+  .logo {
+    width: 100%;
+    display: block;
+    padding-bottom: .25em;
+  }
+
+  menu, ul, ol {
+    margin:0;
+  }
+
+  li a {
+    color: $link-color;
+    font-weight: bold;
+    padding: $padding-v $padding-h;
+    margin-left: -$padding-h;
+    display: inline-block;
+    border-radius: $base-border-radius;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  .active a {
+    color: $shade-mid;
+    background: $base-bg-light;
+  }
+
+  input {
+    margin-bottom: -1px;
+    border-top:0;
+    padding: $padding-v + 0.2em 0;
+    text-indent: 1em; 
+  }
+
+  .btn {
+    margin-bottom: 0;
+    color: #fff;
+  }
+
+}
+
+// Position
+
+.headroom { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index: 1001;
+  -webkit-transition:-webkit-transform .25s ease-in-out, background .25s ease-in-out, color .25s ease-in-out;
+  -moz-transition:transform .25s ease-in-out, background .25s ease-in-out, color .25s ease-in-out;
+  -o-transition:transform .25s ease-in-out, background .25s ease-in-out, color .25s ease-in-out;
+  transition:transform .25s ease-in-out, background .25s ease-in-out, color .25s ease-in-out;
+}
+
+// When at top
+.headroom--top {
+  background: none;
+  -webkit-transform:  translate(0 , 0em);
+  -moz-transform: translate(0 , 0em);
+  -o-transform:  translate(0 , 0em);
+  transform:  translate(0 , 0em);
+
+  li a,
+  .logo {
+    .skin-dark & {
+      @extend %skin-dark;
+    }
+  }
+
+  li a:hover {
+    .skin-dark & {
+      background: rgba(255,255,255,0.25);
+    }
+  }
+}
+
+.headroom--not-top {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 0.125em solid $shade-lightest;
+}
+
+// Show on scroll up
+.headroom--top.headroom--pinned {
+  -webkit-transform:  translate(0 , 0em);
+  -moz-transform: translate(0 , 0em);
+  -o-transform:  translate(0 , 0em);
+  transform:  translate(0 , 0em);
+}
+
+.headroom--not-top.headroom--pinned {
+  -webkit-transform:  translate(0 , -3.5em);
+  -moz-transform: translate(0 , -3.5em);
+  -o-transform:  translate(0 , -3.5em);
+  transform:  translate(0 , -3.5em);
+}
+
+// Hide on scroll down
+.headroom--unpinned {
+  -webkit-transform:  translate(0 , -7.5em);
+  -moz-transform: translate(0 , -7.5em);
+  -o-transform:  translate(0 , -7.5em);
+  transform:  translate(0 , -7.5em);
+}

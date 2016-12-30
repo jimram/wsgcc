@@ -1,0 +1,143 @@
+//
+// Variables
+// --------------------------------------------------
+
+// Global
+// -------------------------
+
+$base-unit:             16px; // Equal to browser default
+$base-font-size:        $base-unit *.75; // 12px
+$base-line-height:      1.5;
+
+
+// Padding & Spacing
+// -------------------------
+
+// used for padding inside components/elements
+$padding-v: 0.5em;
+$padding-h: 1em;
+
+// used for spacing around/between elements
+$spacing-v: $base-unit;
+$spacing-h: $base-unit;
+
+
+// Colors
+// -------------------------
+
+$shade-darkest:         #4c433b;
+$shade-darker:          #726458;
+$shade-dark:            #988575;
+$shade-mid:             #ad9d91;
+$shade-light:           #c1b6ac;
+$shade-lighter:         #d6cec8;
+$shade-lightest:        #eae7e3;
+
+$brand-primary:         #693;
+$brand-secondary:       #6CF;
+
+$alert-danger:          #F99;
+$alert-warning:         #FC9;
+$alert-success:         #b9dc8c;
+$alert-info:            #c2ebff;
+
+// Fonts
+// -------------------------
+
+$font-serif:            'Merriweather',Georgia,Cambria,"Times New Roman",Times,serif;
+$font-sans:             lato,'Merriweather Sans',"Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+$font-mono:             courier,"courier new", monospace;
+$font-hand:             cursive;
+
+// Base 
+// -------------------------
+
+$base-font:             $font-serif;
+$base-bg:               #FFF;
+$base-bg-dark:          darken($shade-lightest,5%);
+$base-bg-light:         lighten($shade-lightest,5%);
+$base-border-color:     $shade-lighter;
+$base-border-radius:    .25em;
+
+
+// Typograhpy 
+// -------------------------
+
+$heading-font:          $font-sans;
+$heading-color:         $shade-darker;
+$heading-weight:        900;
+$heading-transform:     none;
+$heading-line-height:   1;
+
+$text-color:            $shade-darkest;
+$text-weight:           300;
+$text-selection-bg:     $shade-lightest;
+$text-selection-color:  $shade-darkest;
+
+$code-font:             $font-mono;
+
+// Links
+// -------------------------
+
+$link-color:            #39F; // try a nice blue #338dc9
+$link-hover-color:      darken($link-color,10%);
+$link-hover-bg:         #d4eef9; 
+$link-active-color:     $link-hover-color;
+
+
+// Buttons
+// -------------------------
+
+$btn-font:                      $font-sans;
+$btn-padding:                   $padding-v $padding-h *1.5;
+$btn-bg:                        $brand-primary;
+$btn-color:                     #fff;
+$btn-border-color:              darken($btn-bg, 5%);;
+$btn-border-radius:             $base-border-radius;
+$btn-hover-bg:                  lighten($btn-bg, 10%);
+$btn-hover-color:               #fff;
+$btn-hover-border-color:        lighten($btn-border-color, 5%);
+$btn-disabled-bg:               $shade-lightest;
+$btn-disabled-color:            $shade-lighter;
+$btn-disabled-border-color:     $shade-lighter;
+
+// Forms
+// -------------------------
+
+$placeholder-text-color:		$shade-mid;
+
+
+// Tables
+// -------------------------
+
+$table-font:                $font-sans;
+
+
+// Screen Sizes - for use with breakpoint MQs
+// -------------------------
+
+$screen-xs: 24em;
+$screen-sm: 30em;
+$screen-md: 50em;
+$screen-lg: 70em;
+$screen-xl: 90em;
+
+
+// Grid system (from Bootstrap)
+// -------------------------
+
+$grid-columns: 12; // Number of columns in the grid system
+$grid-gutter-width: $base-unit; // Padding, to be divided by two and applied to the left and right of all columns
+$grid-float-breakpoint: $screen-md; // Point at which the navbar stops collapsing
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+$container-tablet: ((720px + $grid-gutter-width)) !default;
+
+// Medium screen / desktop
+$container-desktop: ((940px + $grid-gutter-width)) !default;
+
+// Large screen / wide desktop
+$container-lg-desktop: ((1140px + $grid-gutter-width)) !default;

@@ -1,0 +1,51 @@
+//
+// homepage
+// --------------------------------------------------
+
+%skin-dark {
+  color:#fff;
+  text-shadow:0.025em 0.025em 0 rgba(0,0,0,0.25);
+}
+
+.hero {
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.skin-dark h1,
+  &.skin-dark h2,
+  &.skin-dark h2 a {
+    @extend %skin-dark;
+  }
+
+  h2.lead {
+    font-weight: normal;
+
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hero-msg {
+    clear:both;
+    padding: 40% 0 5%;
+  }
+}
+
+
+#homepage-banner {
+  background-image: url('../img/content/exterior/pano-large.jpg');
+  background-color: #85bad3;
+  border-bottom: 0.5em solid $brand-primary;
+
+  .hero-msg {
+    padding: 20% 0 5%;
+
+    .lead {
+      max-width: 24em;
+    }
+  }
+}

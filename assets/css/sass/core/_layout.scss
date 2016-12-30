@@ -1,0 +1,155 @@
+//
+// Layout
+// --------------------------------------------------
+
+// Sizing
+// ----------
+
+*, 
+*:before, 
+*:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
+html { 
+  font-size: $base-unit; // default is 16px
+}
+
+
+// Scaling
+// ----------
+
+body {
+  background: $base-bg;
+  min-width: 20em;
+  margin:0;
+  line-height: $base-line-height; // default is 1.5
+  font-size: $base-font-size; // 12px
+
+  @media only screen and (min-width: $screen-sm) {
+    font-size: 1em; // 16px
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    font-size: 1.25em;  // 20px
+  }
+
+  @media only screen and (min-width: $screen-lg) {
+
+  }
+  
+}
+
+
+// Structure 
+// ---------------------
+
+.wrapper {
+  padding-left: $spacing-h;
+  padding-right: $spacing-h;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50em;
+
+  @media only screen and (min-width: $screen-md) {
+    padding-left: $spacing-h*2;
+    padding-right: $spacing-h*2;
+  }
+}
+
+header {
+  padding-top: 1.5em;
+
+  @media only screen and (min-width: $screen-md) {
+    padding-top: 2em;
+  }
+
+  .logo {
+    color: $shade-dark;
+    font-family: $font-sans;
+    padding:$spacing-v 0; 
+
+    @media only screen and (min-width: $screen-md) {
+      font-size: 1.25em;
+    }
+
+    .logo-img {
+      width:2em;
+      display: inline-block;
+      border-radius: 100%;
+      margin-right:0.25em;
+      img {
+        margin-bottom: 0;
+      }
+
+      &.primary {
+        background: $brand-primary;
+      }
+
+      &.secondary {
+        background: $brand-secondary;
+      }
+    }
+
+    .logo-text {
+      line-height: 1;
+      display: inline-block;
+    }
+  }
+}
+
+.row div > h4,
+.row div > h5, 
+.row div > h6 {
+  &:first-child {
+    margin-top: $spacing-v;
+  }
+}
+
+h1 {
+  padding-top: 2em;
+  span {
+    font-weight: normal;
+  }
+}
+
+main {
+  padding-bottom: $spacing-v*2;
+}
+
+.footer {
+  background: $base-bg-light;
+  border-top: .5em solid $shade-lightest;
+
+  p {
+    font-family: $font-sans;
+  }
+}
+
+#calendar {
+  height: 24em;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.page-section {
+  border-top: .25em solid $shade-lightest;
+  margin-top: 2.5em;
+}
+
+// helpers
+// ---------------------
+
+.pull-right {
+  float:right!important;
+}
+
+.pull-left {
+  float:left!important;
+}

@@ -1,0 +1,76 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+.btn {
+  display: inline-block;
+  background: $btn-bg;
+  color: $btn-color;
+  padding: $btn-padding;
+  margin-right:$spacing-h;
+  font-size: 1em;
+  font-family: $btn-font;
+  font-weight: bold;
+  text-transform: $heading-transform;
+  border: .125em solid $btn-border-color;
+  border-radius: $btn-border-radius;
+  vertical-align: middle;
+  line-height: 1.25em;
+  cursor: pointer;
+  width: auto;
+  text-decoration: none;
+
+  &:hover, 
+  &:focus,
+  &.active  {
+    color: $btn-hover-color!important;
+    border-color: $btn-hover-border-color;
+    background: $btn-hover-bg;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-disabled-color;
+    border-color: $btn-disabled-border-color;
+    background: $btn-disabled-bg;
+  }
+
+  &.pull-right,
+  .pull-right > & {
+    margin-right: 0;
+  }
+}
+
+.btn-default {
+  background: $base-bg-light;
+  color: $shade-dark;
+  border-color: $shade-lighter;
+
+  &:hover, 
+  &:focus,
+  &.active  {
+    color: $link-color!important;
+    background: $base-bg;
+    border-color: $shade-light;
+  }
+
+  &:active {
+    background: $base-bg-light;
+    color: $link-active-color;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $shade-lighter;
+  }
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: $padding-h/2;
+  padding-right: $padding-h/2;
+}

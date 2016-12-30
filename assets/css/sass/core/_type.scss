@@ -1,0 +1,407 @@
+//
+// Type
+// --------------------------------------------------
+
+body {
+  font-family: $base-font;
+  color: $text-color;
+  font-weight: $text-weight;
+}
+
+// Web font loader - extend this
+// -------------------------
+
+.web-font {
+
+  .wf-loading & {
+      opacity:0;
+  }
+
+  .wf-active &,
+  .wf-inactive & {
+      opacity: 1;
+      -webkit-transition: opacity 0.25s ease-in-out;
+         -moz-transition: opacity 0.25s ease-in-out;
+              transition: opacity 0.25s ease-in-out;
+  }
+
+  .lt-ie7.wf-loading & {
+    visibility: hidden;
+  }
+
+  // Old IE
+  .lt-ie7.wf-active &, 
+  .lt-ie7.wf-inactive & {
+    visibility: visible;
+  }
+
+}
+
+// Vertical Spacing Stacks
+// -------------------------
+
+
+// Single-direction margin declarations
+p,ul,ol,dd,
+img,pre,blockquote,
+fieldset,legend, .form-row,
+.btn {
+  margin:0;
+  margin-bottom: $spacing-v;
+}
+
+// landmark elements 
+form, figure, table, .hero {
+  margin:0;
+  margin-bottom: $spacing-v*2;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: $spacing-v*2.25;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-bottom: $spacing-v*2.5;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: $spacing-v*3;
+  }
+}
+
+// Exception for headings
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+  margin-top:$spacing-v*2;
+  margin-bottom:$spacing-v/4;
+  @extend .web-font;
+
+  @media (min-width: $screen-sm) {
+    margin-top:$spacing-v*2.25;
+    margin-bottom:$spacing-v/2;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-top:$spacing-v*2.5;
+    margin-bottom:$spacing-v*.75;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-top:$spacing-v*3;
+    margin-bottom:$spacing-v;
+  }
+
+  small {
+    font-weight: normal;
+  }
+}
+
+h1, h2, h3 {
+  text-rendering: optimizeLegibility;
+}
+
+
+// Links
+// -------------------------
+
+a {
+  color:$link-color;
+  text-decoration: none;
+
+  &:hover {
+    color:$link-hover-color;
+  }
+
+  &:active,
+  &:focus {
+    color:$link-active-color;
+  }
+
+}
+
+p a {
+  padding: 0.5em; // creates larger target area.
+  margin: -0.5em;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+    background: alpha($link-hover-bg); 
+  }
+
+}
+
+nav a {
+  font-family: $font-sans;
+  font-weight: bold;
+}
+
+
+// Titles
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  color: $heading-color;
+  font-weight: $heading-weight;
+  line-height: $heading-line-height;
+  text-transform: $heading-transform;
+
+  + {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+}
+
+h1 {font-size: 2.25em;}
+h2 {font-size: 2em;}
+h3 {font-size: 1.75em;}
+h4 {font-size: 1.5em;}
+h5 {font-size: 1.25em;}
+h6 {font-size: 1em;}
+
+
+.page-title {
+  font-size: 3.5em;
+  line-height: 1;
+  border-bottom: 0.15em solid $heading-color;
+  padding-bottom: 0.25em;
+}
+
+.lead {
+  font-size: 1.5em;
+  line-height: 1.25em;
+}
+
+p {
+
+}
+
+// Lists
+// -------------------------
+
+ul,
+ol {
+  list-style-position: outside;
+  padding-left: $padding-h *2;
+  font-family: $font-sans;
+}
+
+li ul,
+li ol {
+  padding-left: $padding-h *1.5;
+}
+
+ol ol {
+  list-style: lower-alpha;
+}
+
+nav li {
+  list-style: none;
+}
+
+
+.list-inline {
+  padding: 0;
+
+  li {
+    padding-right: $padding-h;
+    display: inline-block;
+    float: left;
+  }
+}
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+}
+
+// definition lists
+
+dl,
+dd {
+
+}
+
+dt {
+  font-weight: bold;
+}
+
+.dl-horizontal {
+
+  dt {
+    float: left;
+    clear: left;
+    width: 20.25%;
+    text-align: right;
+  }
+
+  dd {
+    margin-left: 22.78%;
+  }
+
+}
+
+// Quotes
+// -------------------------
+
+blockquote,
+figure p {
+  padding-left: $padding-h *2;
+  font-family: $font-serif;
+  font-style: italic;
+  color: $shade-dark;
+}
+
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+cite,
+figcaption {
+color: $shade-mid;
+}
+
+figcaption {
+  font-size: 0.75em;
+  color: $shade-light;
+}
+
+
+// Tables
+// -------------------------
+
+table {
+  width: 100%;
+  font-family: $table-font;
+}
+
+tr > {
+  td, th {
+    border: 0;
+    border-bottom: 1px solid $base-border-color;
+    padding: $padding-v;
+    padding-left: 0;
+  }
+}
+
+th, 
+table caption {
+  text-align: left;
+  color: $heading-color;
+}
+
+table caption {
+  font-size: 1.25em;
+  margin-top: 2rem;
+}
+
+// tr:nth-child(even) {
+//   background: $shade-lightest;
+// }
+
+// Rules
+// -------------------------
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  margin: 2rem 0;
+  border-top: .25em solid $shade-lightest;
+  padding: 0;
+}
+
+// Text-level
+// -------------------------
+
+abbr[title] {
+  border-bottom: 1px dotted $base-border-color;
+  cursor: help;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  background-color: $alert-warning;
+  color: $text-color;
+  text-decoration: none;
+  padding: .25em;
+  margin: -.25em 0;
+}
+
+s, del {
+  text-decoration: line-through;
+  color: $shade-light;
+}
+
+mark {
+  background: none;
+  border-bottom: .25em solid $base-bg-dark;
+  color: $text-color;
+  font-style: italic;
+  font-weight: bold;
+  margin: -.25em 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: $font-mono;
+  line-height: $base-line-height;
+  background: $base-bg-dark;
+}
+
+pre {
+  padding: $padding-v $padding-h;
+  border-radius: $base-border-radius;
+}
+
+p code,
+p samp,
+p kbd {
+  padding: .25em;
+  margin: -.25em 0;
+  border-radius: $base-border-radius;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: $base-line-height;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

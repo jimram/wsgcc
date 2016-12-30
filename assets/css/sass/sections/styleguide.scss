@@ -1,0 +1,171 @@
+//
+// Styleguide
+// --------------------------------------------------
+
+// Layout
+
+body.has-fixed-menu-bar main > section {
+  padding-top: 2.5em;
+}
+
+// Menu
+
+// Position
+
+.menu-bar.fixed { 
+  opacity: 0.85;
+  -webkit-transition:opacity .15s ease-in-out;
+  -moz-transition:opacity .15s ease-in-out;
+  -o-transition:opacity .15s ease-in-out;
+  transition:opacity .15s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.menu-trigger {
+  display: inline-block;
+  padding: $padding-v $padding-h;
+  background: rgba(255,255,255,0.95);
+  color: $brand-primary;
+
+  &:before {
+    content:'\2630';
+    display: inline-block;
+  }
+
+  small {
+    font-weight: bold;
+    margin-left: 1em;
+  }
+}
+
+
+#menu {
+  display: none;
+  position: fixed;
+  top:-100%;
+  left:0;
+  width:100%;
+  min-height: 100%;
+  background: rgba(255,255,255,0.95);
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out,  top 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out, top 0.25s ease-in-out;
+
+  &:target,
+  &.open {
+    display: block;
+    opacity: 1;
+    top:2.5em;
+    margin-top: 1px;
+  }
+
+  ul {
+    padding: 0;
+    font-size: 1.5em;
+    text-align: center;
+    min-height: 100%;
+  }
+
+  a {
+    padding: $padding-v $padding-h;
+    display: block;
+    &:hover {
+      background: lighten($shade-lightest, 3%);
+    }
+  }
+}
+
+// Color Palette
+// ----------------------
+
+.palette {
+  margin-left:0;
+  margin-right:0;
+  margin-bottom: 1rem;
+
+  [class*="swatch-"] {
+    color:#fff;
+    font-size: 0.75em;
+    text-align: center;
+    padding-top: $padding-v*4;
+    padding-bottom: $padding-v*4;
+  }
+
+  .swatch-darkest {
+    background: $shade-darkest;
+  }
+
+  .swatch-darker {
+    background: $shade-darker;
+  }
+
+  .swatch-dark {
+    background: $shade-dark;
+  }
+
+  .swatch-mid {
+    background: $shade-mid;
+  }
+
+  .swatch-light {
+    background: $shade-light;
+  }
+
+  .swatch-lighter {
+    background: $shade-lighter;
+  }
+
+  .swatch-lightest {
+    background: $shade-lightest;
+    color:$shade-mid;
+  }
+
+  .swatch-primary {
+    background:$brand-primary;
+  }
+
+  .swatch-secondary {
+    background:$brand-secondary;
+  }
+
+  .swatch-danger {
+    background:$alert-danger;
+  }
+
+  .swatch-warning {
+    background:$alert-warning;
+    color:$shade-mid;
+  }
+
+  .swatch-success {
+    background:$alert-success;
+  }
+
+  .swatch-info {
+    background:$alert-info;
+  }
+
+}
+
+// Fonts
+// ----------------------
+
+.font-serif {
+  font-family: $font-serif;
+}
+
+.font-sans {
+  font-family: $font-sans;
+}
+
+.font-mono {
+  font-family: $font-mono;
+}
+
+.font-hand {
+  font-family: $font-hand;
+}
+

@@ -1,0 +1,18 @@
+// Media
+// ----------
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  display: block;
+  height: auto;
+
+  .row div > & {
+    border-radius: $base-border-radius;
+    border: .25em solid $base-bg-light;
+  }
+}
+
+.avatar {
+  border-radius: 100%!important;
+}

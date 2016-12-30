@@ -1,0 +1,18 @@
+//
+// Badge
+// --------------------------------------------------
+
+// Default
+
+.badge {
+  background: $base-bg-light;
+  color: $brand-primary;
+  display: inline-block;
+  border-radius: 100%;
+  width: 1.5em;
+  padding: .25em;
+  margin: -.25em;
+  margin-right: 0;
+  position: relative;
+  text-align: center;
+}

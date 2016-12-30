@@ -1,0 +1,224 @@
+//
+// Forms
+// --------------------------------------------------
+
+input,
+select,
+textarea {
+  font-size: 1em;
+  color: $shade-dark;
+  font-weight: $text-weight;
+  font-family: $font-sans;
+  border:0.15em solid $shade-lighter;
+  padding: $padding-v 0;
+  background-color: $base-bg;
+  border-radius: $btn-border-radius;
+
+  &:focus {
+    border-color: $shade-darker;
+    color: $shade-darker;
+    background: $base-bg;
+    outline: none;
+  }
+
+  &[disabled],
+  .disabled {
+    background: $base-bg-dark;
+    cursor: not-allowed;
+  }
+
+}
+
+input,
+select,
+textarea {
+  width:100%;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+  padding: $padding-v 0 0 $padding-h/2;
+}
+
+legend {
+  margin-top: 2rem;
+  font-family: $heading-font;
+  font-size: 1.5em;
+  font-weight: $heading-weight;
+  text-transform: $heading-transform;
+  color: $heading-color;
+}
+
+label {
+  padding: $padding-v/2 0;
+  display: block;
+  font-family: $font-sans;
+  color: $heading-color;
+  line-height: 1.25em;
+  font-weight: bold;
+  
+  small {
+    font-weight: normal;
+  }
+
+  + input,
+  + select,
+  + textarea {
+    margin-bottom: $base-unit;
+
+    fieldset &,
+    .form-row &, 
+    .form-horizontal & {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+input {
+  text-indent: $padding-h/2;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  min-width:1em;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  margin-right: $padding-h/2;
+}
+
+.checkbox, .radio {
+  font-weight: normal;
+}
+
+.btn > {
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-left: -$padding-h/2;
+  }
+}
+
+.checkbox-inline, .radio-inline {
+  display: inline-block;
+  float: left;
+  margin-right: $padding-h*2;
+}
+
+
+input[type="range"] {
+  border:none;
+  margin-left: 0;
+  margin-right: 0;
+  &:focus {
+    background: none;
+  }
+}
+
+input[type="color"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"] {
+  width: 50%;
+}
+
+
+select {
+  padding:$padding-v $padding-h/2;
+  height: $padding-v + 1.5em + $padding-v;
+  cursor: pointer;
+
+  optgroup {
+    border-top: 1px solid $base-border-color;
+    background: $base-bg-light;
+    font-size: 1em;
+    font-family: $font-sans;
+    cursor: default;
+    text-indent: .5em;
+
+    option {
+      background: #fff;
+      cursor: pointer;
+    }
+  }
+
+  option {
+    padding:$padding-v;
+    border-top: 1px solid $base-border-color;
+
+    &:focus,
+    &:checked {
+      background:$brand-primary;
+    }
+  }
+}
+
+select[multiple] {
+  padding:0;
+  height: auto;
+
+  option {
+    padding:$padding-v;
+    height: $padding-v + 1.5em + $padding-v;
+  }
+}
+
+button {
+  @extend .btn;
+}
+
+.help-text {
+  font-family: $font-sans;
+}
+
+// Layout
+// -------------------------
+
+.form-horizontal {
+
+  @media (min-width: $screen-sm) {
+
+    label {
+      float: left;
+      width: 25%;
+      padding: $padding-v 0;
+    }
+
+    textarea {
+      width: 75%;
+    }
+
+    button {
+      margin-left: 25%;
+    }
+  }
+}
+
+
+// Placeholders
+// -------------------------
+
+::-webkit-input-placeholder {
+   color: lighten($placeholder-text-color,25%);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $placeholder-text-color;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $placeholder-text-color;  
+}
+
+:-ms-input-placeholder {  
+   color: $placeholder-text-color;  
+}

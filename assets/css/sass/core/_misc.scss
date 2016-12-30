@@ -1,0 +1,17 @@
+//
+// Misc
+// --------------------------------------------------
+
+::-moz-selection {
+    background: $text-selection-bg;
+    text-shadow: none;
+    color: $text-selection-color;
+}
+
+::selection {
+    background: $text-selection-bg;
+    text-shadow: none;
+    color: $text-selection-color;
+}
+
+

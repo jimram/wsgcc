@@ -1,0 +1,41 @@
+//
+// Base Manifest
+// --------------------------------------------------
+
+
+// Core
+// --------------------------------------------------
+
+@import "sass/core/variables";
+@import "sass/core/mixins";
+
+@import "sass/core/reset";
+@import "sass/core/layout";
+@import "sass/core/grid";
+@import "sass/core/type";
+@import "sass/core/media";
+@import "sass/core/forms";
+@import "sass/core/buttons";
+@import "sass/core/helpers";
+@import "sass/core/misc";
+@import "sass/core/print";
+
+
+// Components
+// --------------------------------------------------
+
+@import "sass/components/menu-bar";
+@import "sass/components/badge";
+
+
+// Sections
+// --------------------------------------------------
+
+@import "sass/sections/styleguide";
+@import "sass/sections/homepage";
+
+
+// Plugins
+// --------------------------------------------------
+
+// e.g. @import "sass/plugins/fancybox";
