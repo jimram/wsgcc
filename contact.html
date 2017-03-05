@@ -61,7 +61,7 @@
 
                 <div class="col-sm-7 col-xs-12 pull-left">
                     <h4>Send a message</h4>
-                    <form action="/forms/emailer.php" method="get">
+                    <form action="https://formspree.io/tracy@hallhirekent.co.uk" method="POST">
                         <div class="form-row">
                             <label for="customer-name">
                                 Your Name
@@ -72,12 +72,12 @@
                             <label for="customer-email">
                                 Email
                             </label>
-                            <input id="customer-email" type="email" name="customer-email" required>
+                            <input id="customer-email" type="email" name="_replyto" required>
                         </div>
                         <div class="form-row">
                             <label for="customer-phone">
                                 Phone <small>(optional)</small>
-                            </label>                   
+                            </label>
                             <input id="customer-phone" type="tel" name="customer-phone">
                         </div>
                         <div class="form-row">
@@ -87,9 +87,10 @@
                             <textarea id="customer-message" name="customer-message" rows="4" cols="0"></textarea>
                         </div>
                         <div class="form-row">
-                            <button class="btn" type="submit">Send</button>
+                            <input class="btn" type="submit" value="Send"/>
                         </div>
                     </form>
+                </div>
             </div>
         </main>
 
